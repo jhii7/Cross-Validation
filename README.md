@@ -2,6 +2,7 @@
 
 https://scikit-learn.org/1.5/modules/cross_validation.html
 
+```
 import matplotlib.pyplot as plt
 from sklearn import datasets, linear_model
 from sklearn.tree import DecisionTreeClassifier
@@ -30,3 +31,4 @@ fig, axs = plt.subplots(2)
 fig.suptitle('Plots')
 axs[0].plot(irisdata['data'])
 axs[1].plot(y_pred)
+```
