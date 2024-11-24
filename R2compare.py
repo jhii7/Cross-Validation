@@ -7,7 +7,7 @@ from sklearn.model_selection import cross_val_score
 
 # !!!
 # Here, we get the R^2 (coefficient of determination) values for training and testing data.
-# The higher the R^2, the better fit to the linear regression model.
+# "R-squared is a statistical measure that indicates how much of the variation of a dependent variable is explained by an independent variable in a regression model."
 # In essence, the higher the score, the better predictive performance. 
 # !!!
 
