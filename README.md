@@ -62,3 +62,10 @@ Metrics Sensitivity: Depending on which metrics you are using, you may notice di
 
 
 End: By comparing the metrics from both methods, you can assess the reliability and robustness of your model's performance. If cross-validation shows significantly better or more consistent results, it may be a better method to use for performance evaluation on your dataset.
+
+
+
+
+
+INSTRUCTIONS , will edit later - LIana
+pip install pandas numpy scikit-learn
