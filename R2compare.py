@@ -42,8 +42,7 @@ X = data[0].values.reshape(-1, 1)  # First col =  feature
 y = data[1].values  # Second col =  target
 
 
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
 model = LinearRegression().fit(X_train, y_train)
 print("Train-Test Split, Linear Regression R^2 Training Data: ")
