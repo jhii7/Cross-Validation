@@ -4,22 +4,25 @@
 ## Overview
 
 #### What is Cross-Validation?
-
 Cross-validation, K-folds specifically, is a validation technique used to train and test data for prediction models. This validation technique addresses the limitations of single train-test split, as it is a better estimate of model performance due to its reduced impact on data splitting location. This is especially true for imbalanced datasets, where one class could have fewer samples than another.
 
-#### Cross-validation (K-folds) Summary:
+Cross-validation (K-folds) Summary:
 1. The dataset is divided into k equal parts (folds)
 2. The model is trained k times, each time using k-1 folds for training and the remaining fold for testing.
-3. Rotation after each train and test split occurs, so a seperate fold is used for testing each time- all k folds get tested once.
+2. Rotation after each train and test split occurs, so a separate fold is used for testing each time- all k folds get tested once.
 
-#### Single Train-Test Split Summary:
+Single Train-Test Split Summary:
 1. Split the data into two parts
 2. Train one part of the data, use this model to test the other part.
 
-#### Benefits
-Cross-validation (K-folds) provide a better estimate of model performance by testing on different parts of the data.
+#### Benefits of K-Folds:
+Cross-validation (K-folds) provide a better estimate of model performance by testing on different parts of the data. This reduces the impact of data splitting on the results, leading to a more reliable evaluation.
 
-This reduces the impact of data splitting on the results, leading to a more reliable evaluation.
+However, this technique comes with runtime as a tradeoff, for K-fold cross-validation requires more computational time as the model needs to be trained k times.
+
+#### Why is Cross Validation Evaluation Important?
+Cross-validation evaluation can provide a comprehensive model performance assessment of training and validation techniques such as single train-test split and k-folds cross validation; this assessment provides insight into how well the data was used to make a predictive model, essentially how the testing and predictive parts of these approaches fit. 
+This evaluation is also important because it recognizes and displays the tradeoffs between different validation techniques.
 
 ## Tool Goals
 
