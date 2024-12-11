@@ -1,71 +1,62 @@
-# Cross-Validation
 
-https://scikit-learn.org/1.5/modules/cross_validation.html
+# Cross Validation Evaluation: R^2/ F1 Scoring Tool
+
+## Overview
+
+## Instructions
+
+#### 1. Install Packages
+
+To install necessary packages, paste the following command in the terminal:
+```
+pip install imbalanced-learn numpy pandas scikit-learn matplotlib
+```
+#### 2. Running the Script
+
+To run the Python script in VSC/Github, enter the following command in the terminal:
+```
+python F1R2figsINPUT.py
+```
+After this, the script will prompt the user for a file path. Enter the input file's path into the terminal. 
+```
+"Enter path to the CSV: "
+```
+The following example provides the filepath to csv file dataset1.csv, located inside TestingSets folder within the directory.
+```
+# Example:
+TestingSets/dataset1.csv
+```
+#### 3. Evaluating the Output
+The following output will record the R^2 and F1 values for each train-test split and k-fold generated from the input dataset. The following is an example output derived from imput file dataset1.csv:
+```
+$ python F1R2figsINPUT.py
+Enter path to the CSV: TestingSets/dataset1.csv
+ 
+ 
+R^2 Evaluation:
+ 
+Train-Test Split, Linear Regression R^2 Training Data: 
+0.00013016622712969106
+Train-Test Split, Linear Regression R^2 Testing Data: 
+-0.03326427777288421
+ 
+ 
+K-folds, Linear Regression: 
+R² Score for each fold: [np.float64(-0.002), np.float64(-0.0049), np.float64(-0.0092), np.float64(-0.1091), np.float64(-0.019)]
+Average R² across 5 folds: -0.03
+ 
+ 
+F1 Evaluation:
+ 
+Best threshold: -0.9226599999999999, Best F1 Score: 0.97
+Train-Test Split, Logistic Regression (F1):
+F1 Score (Training Data): 0.5149
+F1 Score (Testing Data): 0.5106
+ 
+ 
+
+K-folds, Logistic Regression (F1, Representing Testing Sets):
+F1 Score for each fold: [0.9529, 0.9899, 0.9691, 0.9899, 0.9688]
+Average F1 Score across 5 folds: 0.9741
 
 ```
-import matplotlib.pyplot as plt
-from sklearn import datasets, linear_model
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import KFold, cross_val_score, cross_validate, cross_val_predict
-
-X, y = datasets.load_iris(return_X_y=True)
-
-
-clf = DecisionTreeClassifier(random_state=42)
-
-k_folds = KFold(n_splits = 5)
-
-# scores = cross_val_score(clf, X, y, cv = k_folds)
-# print1 = cross_validate(clf, X, y, return_train_score = True, cv = k_folds)
-
-
-# # print("Cross Validation Scores: ", scores)
-# # print("Average CV Score: ", scores.mean())
-# # print("Number of CV Scores used in Average: ", len(scores))
-# # print(print1)
-
-lasso = linear_model.Lasso()
-y_pred = cross_val_predict(lasso, X, y, cv=k_folds)
-
-fig, axs = plt.subplots(2)
-fig.suptitle('Plots')
-axs[0].plot(irisdata['data'])
-axs[1].plot(y_pred)
-```
-
-To evaluate the effectiveness of 5-fold cross-validation compared to using a single train-test split (i.e., without cross-validation), you can follow these steps:
-
-1.Model Training Without Cross-Validation:
-
-Split your dataset into a training set and a testing set (commonly a 70/30 or 80/20 split).
-Train your model on the training set.
-Evaluate the model on the testing set using appropriate metrics (e.g., accuracy, precision, recall, F1 score).
-
-2.Model Training With 5-Fold Cross-Validation:
-
-Divide your dataset into 5 equally sized folds.
-For each fold: Use it as a validation set while the other 4 folds are used for training; Train the model and evaluate it on the validation fold.
-Calculate the average performance metrics across all folds.
-
-3.Comparison of Results:
-
-Compare the average metrics obtained from 5-fold cross-validation with the metrics from the train-test split.
-Analyze the variance in performance across the folds; lower variance often indicates that the model is stable and performs consistently.
-
-4.Considerations:
-
-Overfitting and Underfitting: Cross-validation helps in understanding how well your model generalizes to unseen data, while a single train-test split can give a biased estimate if the split is not representative.
-
-Data Size: If your dataset is small, cross-validation can provide a better estimate of model performance because it allows all data to be used for training and validation.
-
-Metrics Sensitivity: Depending on which metrics you are using, you may notice differences in the evaluation of model performance.
-
-
-End: By comparing the metrics from both methods, you can assess the reliability and robustness of your model's performance. If cross-validation shows significantly better or more consistent results, it may be a better method to use for performance evaluation on your dataset.
-
-
-
-
-
-INSTRUCTIONS , will edit later - LIana
-pip install pandas numpy scikit-learn
