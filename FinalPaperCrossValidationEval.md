@@ -1,14 +1,6 @@
 
 # Cross Validation Evaluation: R^2/ F1 Scoring Tool
 
-## Table of Contents
-1. [Overview](#overview)
-2. [Tool Goals](#ToolGoals)
-3. [Overview](#overview)
-4. [Overview](#overview)
-5. [Overview](#overview)
-6. [Overview](#overview)
-
 ## Overview
 
 #### What is Cross-Validation?
