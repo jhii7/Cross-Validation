@@ -19,13 +19,13 @@ from imblearn.over_sampling import SMOTE
 # In essence, the higher the score, the better predictive performance. 
 # !!!
 
-# USING SKLEARN DIABETES DATASET, COMMENT OUT IF USING OWN DATASET
-# BMI VS. BLOOD PRESSURE
-#X, y = load_diabetes(return_X_y=True)
-# END
 
 filepath = input("Enter path to the CSV: ")
 data = pd.read_csv(filepath)
+print(" ")
+print(" ")
+print("R^2 Evaluation:")
+print(" ")
 
 X = data.iloc[:, :-1].values  # All columns except the last one
 y = data.iloc[:, -1].values   # The last column
@@ -66,6 +66,9 @@ fig.suptitle("Plotting Train-Test Split predictions")
 plt.tight_layout()
 plt.show()
 
+
+print(" ")
+print(" ")
 # K-Folds (5) #
 
 k = 5
@@ -103,6 +106,10 @@ fig.suptitle("Plotting cross-validated predictions")
 plt.tight_layout()
 plt.show()
 
+print(" ")
+print(" ")
+print("F1 Evaluation:")
+print(" ")
 # best threshold using percentiles
 best_threshold = None
 best_f1 = 0
@@ -133,7 +140,6 @@ smote = SMOTE(random_state=42)
 Xresample, yresample = smote.fit_resample(X, yclass)
 
 
-
 # Train Test Split F1
 X_train, X_test, y_train, y_test = train_test_split(Xresample, yresample, test_size=0.2, random_state=0)
 model = LogisticRegression().fit(X_train, y_train)
@@ -147,6 +153,9 @@ print("Train-Test Split, Logistic Regression (F1):")
 print(f"F1 Score (Training Data): {trainf1:.4f}")
 print(f"F1 Score (Testing Data): {testf1:.4f}")
 
+
+print(" ")
+print(" ")
 
 
 # K-Fold Cross Validation F1 (5)
