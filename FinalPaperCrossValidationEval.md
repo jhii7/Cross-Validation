@@ -129,7 +129,6 @@ Allowing the model to adjust is very important, as it is able to analyze differe
 
 
 
-INSERT PHOTO OF R2 SCORES
 ![Images for R2 scores of the children allergy data csv file](R2.png)
 
 The R<sup>2</sup> value for cross-validation is higher than the R<sup>2</sup> value for the train-test split alone. In other words, there is less variance from the regression line using cross validation. 
