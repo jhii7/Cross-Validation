@@ -138,9 +138,9 @@ The R<sup>2</sup> value for cross-validation is higher than the R<sup>2</sup> va
 
 The F1 score for cross-validation is higher than the F1 score for the train-test split alone. In other words, the cross-validation algorithm performs better than cross-validation due to its higher precision and recall. 
 
-![](Train-Test Split Pred.png)
+![](Train-Test.png)
 
-![](Cross-validated Pred.png)
+![](Cross-validated.png)
 
 
 The plots are consistent with this fact. Points in the train-test split are more spread out and further from the regression line, while values for cross-validation appear more congregated and closer. Further, the residuals vs. predicted values plot for the train-test split shows maximum y-value points with differences of above `200` whereas the residuals vs. predicted values plot for the cross-validated predictions shows maximum y-value points with a difference of around `100`. This indicates that there is less of a difference in the cross-validated predictions compared to the train-test split predictions. 
