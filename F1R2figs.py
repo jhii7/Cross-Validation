@@ -118,7 +118,7 @@ for t in thresholds:
         best_threshold = t
 
 print(f"Best threshold: {best_threshold}, Best F1 Score: {best_f1:.2f}")
-yclass = (y > thresh).astype(int)
+yclass = (y > best_threshold).astype(int)
 
 scaler = StandardScaler()
 X = scaler.fit_transform(X)
