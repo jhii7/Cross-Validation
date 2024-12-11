@@ -5,18 +5,17 @@
 
 #### What is Cross-Validation?
 
-Cross-validation is a method used in statistical analysis and machine learning to assess and compare the performance of predictive models. It works by splitting the data into two or more subsets. In this process, the data is divided into complementary parts: one part is used to train the model, while another is used for validating its performance.
-Cross-validation is mainly used to determine how well a predictive model can perform on new datasets. Its accuracy is crucial in real-world scenarios.
+Cross-validation, K-folds specifically, is a validation technique used to train and test data for prediction models. This validation technique addresses the limitations of single train-test split, as it is a better estimate of model performance due to its reduced impact on data splitting location. This is especially true for imbalanced datasets, where one class could have fewer samples than another.
 
-#### Why Is Cross Validation Important?
-Cross-validation has indispensable role in developing and evaluating predictive models and offers several important benefits below:
-1. Cross-validation can provide a detailed model performance assessment across training and validation datasets, which helps uncover any variance in results. 
+#### Cross-validation (K-folds) Summary:
+1. The dataset is divided into k equal parts (folds)
+2. The model is trained k times, each time using k-1 folds for training and the remaining fold for testing.
+3. Rotation after each train and test split occurs, so a seperate fold is used for testing each time- all k folds get tested once.
 
-2. Cross-validation enhances the model's reliability by ensuring that success isn't simply a result of overfitting a particular dataset, leading to better predictions for new, independent datasets.
+#### Benefits
+Cross-validation (K-folds) provide a better estimate of model performance by testing on different parts of the data.
 
-3. Cross-validation can be applied to compare different models based on their performance to assist in model selection. It allows us to identify the one that performs best across various data splits.
-
-4. Cross-validation aids in tuning parameters: we can test different hyperparameter settings to choose the best one, which enhances the model's predictive accuracy. Cross-validation is an essential tool for building and validating strong predictive models.
+This reduces the impact of data splitting on the results, leading to a more reliable evaluation.
 
 ## Tool Goals
 
