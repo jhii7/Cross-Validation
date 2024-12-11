@@ -12,6 +12,10 @@ Cross-validation, K-folds specifically, is a validation technique used to train 
 2. The model is trained k times, each time using k-1 folds for training and the remaining fold for testing.
 3. Rotation after each train and test split occurs, so a seperate fold is used for testing each time- all k folds get tested once.
 
+#### Single Train-Test Split Summary:
+1. Split the data into two parts
+2. Train one part of the data, use this model to test the other part.
+
 #### Benefits
 Cross-validation (K-folds) provide a better estimate of model performance by testing on different parts of the data.
 
